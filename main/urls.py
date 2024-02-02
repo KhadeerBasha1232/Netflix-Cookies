@@ -4,6 +4,5 @@ urlpatterns = [
     path('netflix/', views.get, name='Netflix'),
     path('randomize-content/', views.get_random_content, name='randomize_content'),
     path('',views.index,name="Index"),
-    path('upload/', views.post , name='upload_zip'),
     # Add other URLs as needed
 ]
