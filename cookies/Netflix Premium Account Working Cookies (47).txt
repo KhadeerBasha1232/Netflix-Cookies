@@ -1,0 +1,11 @@
+secured.netflix.com	FALSE	/	TRUE	1706359839	thx_guid	97c2e65de82d0fc8350585a012fc2a48
+.netflix.com	TRUE	/	FALSE	1710520813	memclid	c20ba175-6c8d-47c2-9202-e49171607d5a
+.netflix.com	TRUE	/	FALSE	1730740507	nfvdid	BQFmAAEBEOJVgM5OPwCwGX5xivTw7KVg5vEfg0veOvSgwUWR98xenvPXB8anF2LFtRYgbaK0uXswniutCno_MNKPcecsKHZgVD0tpni3OjEOT4gH9kYFifK3ihNTY3LT7tnpdKwnf7a_5rPDa8LB6-xfHbV-moeu
+.netflix.com	TRUE	/	TRUE	1735199473	NetflixId	v%3D2%26ct%3DBQAOAAEBEFV8kEf8Sb74-FhZtdA4xV-BwDVyebcPGGDtrgzCrKhSiocpcX8k6qj1WKw05gk-opY_QhcaI7Y9d3S_MoZ28F9R1wxd9ud_bEUdGxQA-xJI6cHxw_SD5nZSfgCjymADODGHX2Sq8NFCTkaW5_bd2Vju7yU8N7XtWA6-ZN8RUuEDtq7Sr6-aZ9maGQPPHLiRl7aRF9u5975LBx4-nTbtvSCNGruUc-ZjHDToKZn6ebwzs12X_w5YvUYkXxNstv2nm2usueeDCWFlsS2CxOMcuzBBkVcS7_7jjpoAbag1UynEq5HfTpDFCHZx3ZHEPOLeNmQVSmuyCiqDJRBefV02fupeO5_ViAmh1qkQdgFZlYpIgOvldR543__UIfaCG-hrwvS7i2zY6YGtAogfT1LujtokMqg7vSLRLqDwUWZ8S7B55xDcgkDL566oDurkB13QcXEmLCBddz7cZLhOBQjRrXK7kgfdO-UFlM_HE7MDHzMtcKY8868zoABR6YGSgVN_42ucqn58DUdClNIXGskDT2JZCLX9a7avz7WPmiOSKFBJUnb-UOgdpyUwDAG7p4ZhPF2yiFqLTF8yKMDuvzMmpCQRd7GYYNoJ0MgGrBILx8gt1I0.%26bt%3Ddbl%26ch%3DAQEAEAABABT1cu-nNvu2yKcTXrJ_WKRSuXiGVRhXr-c.%26mac%3DAQEAEAABABR1zYJGG_74NIyPGykkQvYoL-SeZO5pb4w.
+.netflix.com	TRUE	/	FALSE	1735199477	OptanonConsent	isIABGlobal=false&datestamp=Wed+Dec+27+2023+10%3A51%3A17+GMT%2B0300+(East+Africa+Time)&version=202301.1.0&consentId=c227b0d3-b0ee-4d26-9bb0-087fbfd7bee4&interactionCount=1&landingPath=NotLandingPage&groups=C0001%3A1%2CC0002%3A1%2CC0003%3A1%2CC0004%3A1&hosts=&AwaitingReconsent=false&isGpcEnabled=0
+.netflix.com	TRUE	/	TRUE	1735199473	SecureNetflixId	v%3D2%26mac%3DAQEAEQABABSKiMrJlfoTv4R4vcFjvOaJBZUNlTQ4rCQ.%26dt%3D1703663472032
+.netflix.com	TRUE	/	FALSE	1703674261	flwssn	61166179-2e1c-4f27-be38-a8999333cd57
+.netflix.com	TRUE	/	FALSE	1711439474	netflix-sans-bold-3-loaded	true
+.netflix.com	TRUE	/	FALSE	1711439474	netflix-sans-normal-3-loaded	true
+.netflix.com	TRUE	/	FALSE	1711439474	pas	%7B%22supplementals%22%3A%7B%22muted%22%3Afalse%7D%7D
+.netflix.com	TRUE	/	FALSE	1703676111	profilesNewSession	0

@@ -1,0 +1,19 @@
+<!-- main/templates/main/upload_zip.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Upload Zip</title>
+</head>
+<body>
+    <h1>Upload Zip File</h1>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <input type="file" name="zip_file" accept=".zip">
+        <button type="submit">Upload</button>
+    </form>
+    {% if message %}
+        <p>{{ message }}</p>
+    {% endif %}
+</body>
+</html>
