@@ -1,6 +1,4 @@
 import random
-import rarfile
-import zipfile
 from django.shortcuts import render
 from django.http import JsonResponse
 import os
@@ -51,39 +49,3 @@ def get_random_content(self, *args, **kwargs):
         random_content = file.read().strip()
 
     return JsonResponse({'text_content': random_content})
-
-
-def post( request, *args, **kwargs):
-        uploaded_file = request.FILES.get('zip_file')
-
-        if uploaded_file:
-            print("uploaded")
-            file_extension = uploaded_file.name.split('.')[-1].lower()
-
-            if file_extension == 'zip':
-                # Create a temporary directory to extract files
-                temp_dir = 'temp_extraction_dir'
-                os.makedirs(temp_dir, exist_ok=True)
-
-                try:
-                    # Extract the zip file
-                    with zipfile.ZipFile(uploaded_file, 'r') as zip_ref:
-                        zip_ref.extractall(temp_dir)
-
-                    # Move all text files to the 'cookies' folder
-                    for root, dirs, files in os.walk(temp_dir):
-                        for file in files:
-                            if file.endswith('.txt'):
-                                src_path = os.path.join(root, file)
-                                dest_path = os.path.join('cookies', file)
-                                os.rename(src_path, dest_path)
-
-                    # Clean up the temporary directory
-
-                    return render(request, 'upload.html', {'message': 'Extraction successful'})
-                except Exception as e:
-                    return render(request, 'upload.html', {'message': f'Error: {e}'})
-            else:
-                return render(request, 'upload.html', {'message': 'Invalid file format'})
-        else:
-            return render(request, 'upload.html', {'message': 'No file selected'})
