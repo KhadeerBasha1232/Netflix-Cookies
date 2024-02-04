@@ -1,0 +1,145 @@
+<!-- main/templates/main/upload_zip.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Upload Zip</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        h1 {
+            color: #007BFF;
+        }
+
+        #upload-form {
+            max-width: 400px;
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        input[type="file"] {
+            display: block;
+            margin-bottom: 15px;
+            padding: 10px;
+            width: 100%;
+            border: 1px solid #ced4da;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+        input[type="reset"] {
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        input[type="reset"]:hover {
+            background-color: #0056b3;
+        }
+        /* Add this to your existing styles or create a new style block */
+a {
+    text-decoration: none;
+}
+
+button {
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+    </style>
+    <script>
+        function showPasswordPrompt() {
+            var storedPassword = localStorage.getItem('uploadedPassword');
+
+            if (!storedPassword) {
+                var password = prompt("Enter password:");
+                
+                if (password === "abc") {  // Replace with your actual password
+                    localStorage.setItem('uploadedPassword', password);
+                    setTimeout(function() {
+                        localStorage.removeItem('uploadedPassword');
+                    }, 30 * 60 * 1000);  // Remove password after 30 minutes
+
+                    document.getElementById("upload-form").submit();
+                } else {
+                    alert("Incorrect password. Upload canceled.");
+                    window.location.href = "/"; 
+                }
+            }
+        }
+
+        function clearLocalStorage() {
+            localStorage.removeItem('uploadedPassword');
+            alert('Local storage cleared.');
+            window.location.href = "/";
+        }
+    </script>
+</head>
+<body>
+    <h1>Upload Zip File</h1>
+    
+    <script>
+        // Show password prompt when the page loads
+        window.onload = function () {
+            showPasswordPrompt();
+        };
+    </script>
+
+    <form method="post" enctype="multipart/form-data" id="upload-form">
+        {% csrf_token %}
+        <input type="file" name="zip_file" accept=".zip">
+        <input type="submit">
+        <input type="reset" value="Clear Local Storage" onclick="clearLocalStorage()">
+    </form>
+    
+    {% if message %}
+        <p>{{ message }}</p>
+        
+    {% endif %}
+
+    <a href="/">
+        <button>
+            Home
+        </button>
+    </a>
+</body>
+</html>
