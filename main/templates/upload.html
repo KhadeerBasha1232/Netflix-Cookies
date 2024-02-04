@@ -119,10 +119,29 @@ button:hover {
     <h1>Upload Zip File</h1>
         <script>
         function deleteCookies() {
+            // Function to retrieve CSRF token from cookies
+            function getCookie(name) {
+                let cookieValue = null;
+                if (document.cookie && document.cookie !== '') {
+                    const cookies = document.cookie.split(';');
+                    for (let i = 0; i < cookies.length; i++) {
+                        const cookie = cookies[i].trim();
+                        if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                            cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                            break;
+                        }
+                    }
+                }
+                return cookieValue;
+            }
+        
             // AJAX request to Django view for deleting files
             $.ajax({
                 url: '/delete-cookies/',  // Update with the correct URL
                 type: 'POST',
+                headers: {
+                    "X-CSRFToken": getCookie("csrftoken")
+                },
                 success: function(data) {
                     alert('All files in the "cookies" folder have been deleted.');
                 },
@@ -131,6 +150,7 @@ button:hover {
                 }
             });
         }
+        
     </script>
     <script>
         // Show password prompt when the page loads
