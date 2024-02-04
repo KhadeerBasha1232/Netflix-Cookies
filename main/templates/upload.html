@@ -113,10 +113,25 @@ button:hover {
             window.location.href = "/";
         }
     </script>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script> <!-- Add jQuery -->
 </head>
 <body>
     <h1>Upload Zip File</h1>
-    
+        <script>
+        function deleteCookies() {
+            // AJAX request to Django view for deleting files
+            $.ajax({
+                url: '/delete-cookies/',  // Update with the correct URL
+                type: 'POST',
+                success: function(data) {
+                    alert('All files in the "cookies" folder have been deleted.');
+                },
+                error: function(error) {
+                    console.error('Error deleting files:', error);
+                }
+            });
+        }
+    </script>
     <script>
         // Show password prompt when the page loads
         window.onload = function () {
@@ -141,5 +156,7 @@ button:hover {
             Home
         </button>
     </a>
+    <button onclick="deleteCookies()">Delete Existing Cookies</button>
+    
 </body>
 </html>
