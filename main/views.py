@@ -70,14 +70,6 @@ def post(request, *args, **kwargs):
                 with zipfile.ZipFile(uploaded_file, 'r') as zip_ref:
                     zip_ref.extractall(temp_dir)
 
-                # Remove all existing files in the 'cookies' folder
-                for file in os.listdir('cookies'):
-                    file_path = os.path.join('cookies', file)
-                    try:
-                        if os.path.isfile(file_path):
-                            os.unlink(file_path)
-                    except Exception as e:
-                        print(f"Error deleting file {file_path}: {e}")
 
                 # Move all text files to the 'cookies' folder
                 for root, dirs, files in os.walk(temp_dir):
