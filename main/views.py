@@ -90,3 +90,20 @@ def post(request, *args, **kwargs):
             return render(request, "upload.html", {'message': 'Invalid file format'})
     else:
         return render(request, "upload.html", {'message': 'No file selected'})
+
+
+
+def delete_cookies(request):
+    try:
+        cookies_folder = os.path.join(os.path.dirname(os.path.realpath(__file__)), '..', 'cookies')
+        for file in os.listdir(cookies_folder):
+            file_path = os.path.join(cookies_folder, file)
+            try:
+                if os.path.isfile(file_path):
+                    os.unlink(file_path)
+            except Exception as e:
+                print(f"Error deleting file {file_path}: {e}")
+
+        return JsonResponse({'success': True})
+    except Exception as e:
+        return JsonResponse({'success': False, 'error': str(e)})
